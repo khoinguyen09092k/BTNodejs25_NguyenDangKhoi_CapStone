@@ -1,0 +1,591 @@
+{
+	"info": {
+		"_postman_id": "b18aa262-ee95-4f12-aabf-60a155aeb95e",
+		"name": "baitap_capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23736073"
+	},
+	"item": [
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"khoine2@gmail.com\",\r\n    \"mat_khau\":\"1234\",\r\n    \"ho_ten\":\"khoine\",\r\n    \"tuoi\":\"23\",\r\n    \"anh_dai_dien\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/signUp",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signIn",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2b$10$dOyFgbDnm3DEaM1qPjtEZOW5H8ZZ4cVoLMjLjOL7QfwNHs4gR7CEC",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"khoine2@gmail.com\",\r\n    \"mat_khau\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/signIn",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/home/getImage",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"home",
+						"getImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImagesName",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/home/getImageName",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"home",
+						"getImageName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImageAndUserCreate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/details/getImageAndUserCreate",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"details",
+						"getImageAndUserCreate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInfoComment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\":\"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/details/getInfoComment",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"details",
+						"getInfoComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInfoSaveImg",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\":\"3\",\r\n    \"hinh_id\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/details/getInfoSaveImg",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"details",
+						"getInfoSaveImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCmtOrUnCmt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\":\"5\",\r\n    \"hinh_id\":\"15\",\r\n    \"ngay_binh_luan\":\"2022-01-01 09:00:00\",\r\n    \"noi_dung\":\"test cmt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/details/createCmtOrUnCmt",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"details",
+						"createCmtOrUnCmt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInfoUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/manager/getInfoUser",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"manager",
+						"getInfoUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImgUserCreate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\":\"3\",\r\n    \"hinh_id\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/manager/getImgUserCreate",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"manager",
+						"getImgUserCreate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImgUserSave",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\":\"3\",\r\n    \"hinh_id\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/manager/getImgUserSave",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"manager",
+						"getImgUserSave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addImgUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nguoi_dung_id\":\"3\",\r\n    \"anh_dai_dien\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsnGhw7dMpkAXTwE1torB-VWYmhIUU8VCqow&usqp=CAU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/add/addImgUser",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"add",
+						"addImgUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"khoine2@gmail.com\",\r\n    \"mat_khau\":\"1234\",\r\n    \"ho_ten\":\"khoine1\",\r\n    \"tuoi\":\"232\",\r\n    \"anh_dai_dien\":\"a1111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/add/updateUser/11",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"add",
+						"updateUser",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteImg",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hinh_id\":\"3\"\r\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/manager/deleteImg",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"manager",
+						"deleteImg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteImg",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hinh_id\":\"3\"\r\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/manager/deleteImg",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"manager",
+						"deleteImg"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"key": "accessToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoia2hvaW5ndXllbiIsImlhdCI6MTY3MTAyNDk0NCwiZXhwIjoxOTg2NjAwOTQ0fQ.Vho-IBsA0VnySXGyPn3u2wC-RFoxawj0Ylm8ABFablo",
+			"type": "string"
+		}
+	]
+}
