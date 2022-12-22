@@ -25,12 +25,12 @@ const getInfoComment = async (req, res) => {
                 nguoi_dung_id
             }
         });
-        if (checkUserCmt != 0) {
+        if (checkUserCmt.length != 0) {
 
             sucessCode(res, checkUserCmt, "Lấy thông tin bình luận theo id người dùng thành công")
         }
         else {
-            failCode(res, "ID không tồn tại")
+            failCode(res, "ID người dùng không có bình luận nào ")
         }
     } catch (err) {
         console.log(err);
