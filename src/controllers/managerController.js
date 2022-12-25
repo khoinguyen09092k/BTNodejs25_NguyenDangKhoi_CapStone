@@ -17,34 +17,33 @@ const getInfoUser = async (req, res) => {
 }
 
 // lấy danh sách ảnh đã tạo theo user id
-
 const getImgUserCreate = async (req, res) => {
-        try {
-            let { nguoi_dung_id , hinh_id} = req.body;
-            let ImgUserCreate = await model.hinh_anh.findOne({
-                where: {
-                    nguoi_dung_id,
-                    hinh_id
-                }
-            });
-            if (ImgUserCreate) {
-    
-                sucessCode(res, ImgUserCreate, "Lấy danh sách ảnh đã tạo theo ID thành công")
+    try {
+        let { nguoi_dung_id, hinh_id } = req.body;
+        let ImgUserCreate = await model.hinh_anh.findOne({
+            where: {
+                nguoi_dung_id,
+                hinh_id
             }
-            else {
-                failCode(res, "ID người dùng chưa tạo ảnh ")
-            }
-        } catch (err) {
-            
-            errorCode(res, "Lỗi Backend")
+        });
+        if (ImgUserCreate) {
+
+            sucessCode(res, ImgUserCreate, "Lấy danh sách ảnh đã tạo theo ID thành công")
         }
+        else {
+            failCode(res, "ID người dùng chưa tạo ảnh ")
+        }
+    } catch (err) {
+
+        errorCode(res, "Lỗi Backend")
+    }
 }
 
 // lấy danh sách ảnh đã lưu 
 const getImgUserSave = async (req, res) => {
 
     try {
-        let { nguoi_dung_id , hinh_id} = req.body;
+        let { nguoi_dung_id, hinh_id } = req.body;
         let ImgUserSave = await model.luu_anh.findOne({
             where: {
                 nguoi_dung_id,
@@ -59,7 +58,7 @@ const getImgUserSave = async (req, res) => {
             failCode(res, "ID người dùng chưa lưu ảnh ")
         }
     } catch (err) {
-        
+
         errorCode(res, "Lỗi Backend")
     }
 }

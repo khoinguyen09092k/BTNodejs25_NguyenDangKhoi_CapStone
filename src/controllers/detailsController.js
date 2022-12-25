@@ -6,10 +6,18 @@ const { sucessCode, failCode, errorCode } = require('../config/reponse');
 // Get thông tin ảnh và người tạo ảnh bằng id ảnh
 const getImageAndUserCreate = async (req, res) => {
     try {
-        let data = await model.hinh_anh.findAll({
-            include: ["nguoi_dung_id_nguoi_dung_luu_anhs"]
+        let { hinh_id } = req.body
+        let checkImgAndUser = await model.hinh_anh.findOne({
+            where: {
+                hinh_id
+            }
         });
-        sucessCode(res, data, "Lấy dữ liệu thành công")
+        if(checkImgAndUser){
+            sucessCode(res, checkImgAndUser, "Lấy dữ liệu thành công")
+        }
+        else{
+            failCode(res,"Không có thông tin của người tạo ảnh theo ID trên")
+        }
     } catch (err) {
 
         errorCode(res, "Lỗi Backend")
@@ -76,11 +84,10 @@ const createCmtOrUnCmt = async (req, res) => {
     }
 }
 
-
 // get thông tin ảnh này đã dc lưu chưa theo id ảnh  
 const getInfoSaveImg = async (req, res) => {
     try {
-        let { nguoi_dung_id , hinh_id} = req.body;
+        let { nguoi_dung_id, hinh_id } = req.body;
         let checkUserSaveImg = await model.luu_anh.findOne({
             where: {
                 nguoi_dung_id,
@@ -100,9 +107,7 @@ const getInfoSaveImg = async (req, res) => {
     }
 }
 
-
-
 //commonjs module
 module.exports = {
-    getImageAndUserCreate, getInfoComment, createCmtOrUnCmt,getInfoSaveImg
+    getImageAndUserCreate, getInfoComment, createCmtOrUnCmt, getInfoSaveImg
 }

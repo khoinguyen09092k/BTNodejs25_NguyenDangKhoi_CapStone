@@ -4,7 +4,7 @@ const model = init_models(sequelize);
 const { sucessCode, failCode, errorCode } = require('../config/reponse');
 const nguoi_dung = require('../models/nguoi_dung');
 
-// Get thông tin ảnh và người tạo ảnh bằng id ảnh
+// thêm ảnh đại diện
 const addImgUser = async (req, res) => {
     try {
         let { nguoi_dung_id, anh_dai_dien } = req.body;
